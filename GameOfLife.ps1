@@ -126,20 +126,34 @@ function WorldGenerate ($W,$H)
 
 
 
-$world = WorldGenerate 60 60
+$world = WorldGenerate 150 100
 $counter = 0
+$i = 16
 while ($true) 
 {   cls
     #GENERATORS
     
+    if ($i -eq 16) {$i=0;
+    $world[10][29]=1;
+    $world[10][30]=1;
+    $world[9][29]=1;
+    $world[9][30]=1
+    
+    $world[45][89]=1;
+    $world[45][90]=1;
+    $world[44][89]=1;
+    $world[44][90]=1
     
     
-    if (($counter) -eq 1) {
-        $world[40][17] = 1
-        $world[40][18] = 1
-        $world[49][21] = 1
-        $world[49][21] = 1
     }
+    $i++
+    
+    #if (($counter) -eq 1) {
+    #    $world[40][17] = 1
+    #    $world[40][18] = 1
+    #    $world[49][21] = 1
+    #    $world[49][21] = 1
+    #}
     
     Write-Host "Gen: $counter"
     matrix $world
